@@ -1,0 +1,6 @@
+name: RandomThings
+version: '${version}'
+main: me.will.randomthings.RandomThings
+api-version: 1.18
+authors: [ Williambriggs ]
+description: Idk
