@@ -2,5 +2,11 @@ name: RandomThings
 version: '${version}'
 main: me.will.randomthings.RandomThings
 api-version: 1.18
+depend: [ MMOItems ]
 authors: [ Williambriggs ]
 description: Idk
+commands:
+  randomthings:
+    description: Reloads Plugin
+    usage: /<command> reload
+    aliases: RT

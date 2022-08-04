@@ -1,0 +1,10 @@
+[Botany]
+
+# A List of all IDS, new ID would be "BIOME_MATERIAL"
+List = ["JUNGLE_JUNGLE_LEAVES"]
+
+# Layout for adding new Ingredients,
+# Chance must be between 0-1 [1 - 100%, 0 - 0%, 0.5 - 50%] (Can do others just examples)
+# BIOME_MATERIAL = ["MMOITEM ID", "Chance"]
+
+JUNGLE_JUNGLE_LEAVES = ["INGREDIENT_NUTMEG", "0.5"]
