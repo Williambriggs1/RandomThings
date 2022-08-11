@@ -10,6 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.Objects;
 
 public final class RandomThings extends JavaPlugin {
 
@@ -25,7 +26,7 @@ public final class RandomThings extends JavaPlugin {
         config = loadConfig();
 
 
-        this.getCommand("randomthings").setExecutor(new ReloadCommand());
+        Objects.requireNonNull(this.getCommand("randomthings")).setExecutor(new ReloadCommand());
 
     }
 
@@ -37,7 +38,7 @@ public final class RandomThings extends JavaPlugin {
         File file = new File(getDataFolder(), "config.toml"); // Assign a variable to the file
         if(!file.exists()) {
             try {
-                Files.copy(getResource("config.toml"), file.toPath()); // Copy the file out of our jar into our plugins Data Folder
+                Files.copy(Objects.requireNonNull(getResource("config.toml")), file.toPath()); // Copy the file out of our jar into our plugins Data Folder
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
