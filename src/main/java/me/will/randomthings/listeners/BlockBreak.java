@@ -1,5 +1,6 @@
 package me.will.randomthings.listeners;
 
+import com.moandjiezana.toml.Toml;
 import me.will.randomthings.RandomThings;
 import net.Indyuce.mmoitems.MMOItems;
 import net.Indyuce.mmoitems.api.item.mmoitem.MMOItem;
@@ -10,13 +11,16 @@ import org.bukkit.inventory.ItemStack;
 
 public class BlockBreak implements Listener {
 
+
+
     @EventHandler
     public void playerBreak(BlockBreakEvent event) {
+        Toml config = RandomThings.config;
 
-        if (RandomThings.config.getList("List").contains(event.getBlock().getBiome() + "-" + event.getBlock().getType())) {
+        if (config.getList("List").contains(event.getBlock().getBiome() + "-" + event.getBlock().getType())) {
 
             String id = event.getBlock().getBiome() + "-" + event.getBlock().getType();
-            Object[] data = RandomThings.config.getList(id).toArray();
+            Object[] data = config.getList(id).toArray();
 
 
             if (!(Math.random() < (Float.parseFloat((String) data[1])))) { event.setDropItems(true); } else {

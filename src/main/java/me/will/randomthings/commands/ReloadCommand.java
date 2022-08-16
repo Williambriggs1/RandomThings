@@ -1,6 +1,6 @@
 package me.will.randomthings.commands;
 
-import me.will.randomthings.RandomThings;
+import me.will.randomthings.utils.ReloadConfig;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,9 +15,7 @@ public class ReloadCommand implements CommandExecutor {
 
             if (args.length > 0 && args[0].equalsIgnoreCase("reload")){
 
-                RandomThings.getPlugin().loadConfig();
-
-                RandomThings.config = RandomThings.getPlugin().reloadPluginConfig();
+                new ReloadConfig();
 
                 player.sendMessage("Plugin Reloaded!");
 
